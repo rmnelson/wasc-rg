@@ -39,3 +39,5 @@ Instance: ORCL
 User: lab
 Password: test1234
 
+## test connect via ruby + ori8
+ruby -r oci8 -e "OCI8.new('lab','test1234','//test.c3geublqc0b0.us-west-2.rds.amazonaws.com:1521/ORCL').exec('select * from user_tables') do |r| puts r.join(','); end"
