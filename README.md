@@ -6,7 +6,9 @@ ec2-54-149-111-52.us-west-2.compute.amazonaws.com : ( 54.149.111.52 )
 
 ## connect
 User: ec2-user
+
 Private key:
+
 -----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAs9EVU6BXMayEROMJ6LSe1jwH4D3rH+e2FH2ibmwoxxO/oMWw315M3sRKgMkI
 RgvBYsljY3DGpIQfykparwBojmgJFN3MVKSLBxlITZLogHN2+SqeXWGf5up28l8X3gPdCUi1LWEq
