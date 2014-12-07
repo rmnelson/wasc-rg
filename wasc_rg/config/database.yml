@@ -25,6 +25,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+    adapter: oracle_enhanced
+    database: orcl           # format is tns-name entry
+    host:  test.c3geublqc0b0.us-west-2.rds.amazonaws.com/ORCL   # format is hostname/instance-name
+    username: lab
+    password: test1234
 
