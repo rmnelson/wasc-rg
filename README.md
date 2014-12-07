@@ -55,6 +55,7 @@ echo "
 gem 'ruby-oci8'
 gem 'activerecord-oracle_enhanced-adapter'
 gem 'devise'
+gem 'seed_dump'
 gem 'better_errors'
 gem 'binding_of_caller'
 " >> Gemfile
@@ -76,7 +77,7 @@ development:
     database: orcl           # format is tns-name entry
     host:  test.c3geublqc0b0.us-west-2.rds.amazonaws.com/ORCL   # format is hostname/instance-name
     username: <USER>
-    password: <PASSWORD>
+    password: <PASS>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -91,9 +92,13 @@ production:
 " > config/database.yml
 rails g devise:install
 rails g devise user name:string type:string
-rails g scaffold teacher last_name:string first_name:string username:string availability:string course:references outcome:references
-rails g scaffold outcome program:string objective_letter:string description:string ipa:references course:references program:references
-rails g scaffold ipa letter:string outcome:references
-rails g scaffold program name:string description:string course:references outcome:references 
-rails g scaffold student last_name:string first_name:string username:string grade_basis:string academic_lev:string availability:string course:references program:references
-rails g scaffold course course_num:string course_title:string units:integer program:references teacher:references student:references outcome:references
+rails g scaffold program name:string description:string
+rails g scaffold teacher last_name:string first_name:string username:string availability:string
+rails g scaffold course course_num:string course_title:string units:integer program:references teacher:references
+rails g scaffold outcome objective_letter:string description:string program:references
+rails g scaffold ipa letter:string outcome:references course:references
+rails g scaffold student student_id:integer full_name:string last_name:string first_name:string username:string grade_basis:string academic_lev:string availability:string course:references program:references
+rails g scaffold course_work name:string course:references
+rails g scaffold grades corse_work:references student:references value:integer
+rake db:migrate
+
