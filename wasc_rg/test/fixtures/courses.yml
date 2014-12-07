@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_num: MyString
+  course_title: MyString
+  units: 1
+  program_id: 
+  teacher_id: 
+  semester_id: 
+
+two:
+  course_num: MyString
+  course_title: MyString
+  units: 1
+  program_id: 
+  teacher_id: 
+  semester_id: 

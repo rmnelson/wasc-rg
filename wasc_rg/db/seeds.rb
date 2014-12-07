@@ -1,5 +1,5 @@
 Course.create!([
-  {course_num: "CINS570", course_title: "Advance Databases", units: 3, program_id: 10000, teacher_id: 10000 }
+  {course_num: "CINS570", course_title: "Advanced Databases", units: 3, program_id: 10000, teacher_id: 10000, semester_id: 10000 }
 ])
 Outcome.create!([
   {objective_letter: "A", description: "An ability to apply knowledge of computing and mathematics appropriate to information systems.", program_id: 10000 },
@@ -34,6 +34,9 @@ Program.create!([
   {name: "CINS", description: "Computer Information Systems" },
   {name: "CSCI", description: "Computer Science" },
   {name: "MSCS", description: "Master of Computer Science" }
+])
+Semester.create!([
+  {name: "fall2014" }
 ])
 Teacher.create!([
   {last_name: "Zeichick", first_name: "David", username: "dzeichick", availability: nil }

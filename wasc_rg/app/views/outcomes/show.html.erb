@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Objective letter:</strong>
+  <%= @outcome.objective_letter %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @outcome.description %>
+</p>
+
+<p>
+  <strong>Program:</strong>
+  <%= @outcome.program %>
+</p>
+
+<%= link_to 'Edit', edit_outcome_path(@outcome) %> |
+<%= link_to 'Back', outcomes_path %>

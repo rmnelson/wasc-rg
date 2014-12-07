@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Letter:</strong>
+  <%= @ipa.letter %>
+</p>
+
+<p>
+  <strong>Outcome:</strong>
+  <%= @ipa.outcome %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @ipa.course %>
+</p>
+
+<%= link_to 'Edit', edit_ipa_path(@ipa) %> |
+<%= link_to 'Back', ipas_path %>

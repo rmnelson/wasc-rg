@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 1
+  full_name: MyString
+  last_name: MyString
+  first_name: MyString
+  username: MyString
+  grade_basis: MyString
+  academic_lev: MyString
+  availability: MyString
+  course_id: 
+  program_id: 
+
+two:
+  student_id: 1
+  full_name: MyString
+  last_name: MyString
+  first_name: MyString
+  username: MyString
+  grade_basis: MyString
+  academic_lev: MyString
+  availability: MyString
+  course_id: 
+  program_id: 

@@ -76,8 +76,8 @@ development:
     adapter: oracle_enhanced
     database: orcl           # format is tns-name entry
     host:  test.c3geublqc0b0.us-west-2.rds.amazonaws.com/ORCL   # format is hostname/instance-name
-    username: <USER>
-    password: <PASS>
+    username: ryan
+    password: pass1234
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -94,11 +94,13 @@ rails g devise:install
 rails g devise user name:string type:string
 rails g scaffold program name:string description:string
 rails g scaffold teacher last_name:string first_name:string username:string availability:string
-rails g scaffold course course_num:string course_title:string units:integer program:references teacher:references
+rails g scaffold course course_num:string course_title:string units:integer program:references teacher:references semester:references
 rails g scaffold outcome objective_letter:string description:string program:references
 rails g scaffold ipa letter:string outcome:references course:references
 rails g scaffold student student_id:integer full_name:string last_name:string first_name:string username:string grade_basis:string academic_lev:string availability:string course:references program:references
 rails g scaffold course_work name:string course:references
 rails g scaffold grades corse_work:references student:references value:integer
+rails g scaffold semester name:string
+rails g controller start index
 rake db:migrate
 
