@@ -36,6 +36,9 @@ class CoursesController < ApplicationController
     respond_with(@course)
   end
 
+  def load_students
+  end
+
   private
     def set_course
       @course = Course.find(params[:id])

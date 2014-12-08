@@ -43,6 +43,7 @@ gem 'ruby-oci8'
 gem 'activerecord-oracle_enhanced-adapter'
 gem 'devise'
 gem 'seed_dump'
+gem 'smarter_csv'
 gem 'better_errors'
 gem 'binding_of_caller'
 

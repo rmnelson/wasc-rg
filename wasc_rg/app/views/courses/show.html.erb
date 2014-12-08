@@ -30,5 +30,13 @@
   <%= @course.semester.name %>
 </p>
 
+<p>
+  <strong>Load students</strong>
+  <%= form_tag load_students_path, :multipart => true do %>
+  <%= file_field_tag :file, :accept => "text/csv" %>
+  <%= submit_tag "Upload" %>
+</p>
+<% end %>
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

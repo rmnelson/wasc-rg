@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :course_works
 
   resources :courses
+  post "course/load_students" => 'courses#load_students', as: 'load_students'
 
   resources :students
 
