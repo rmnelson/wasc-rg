@@ -4,8 +4,9 @@ class IpasController < ApplicationController
   respond_to :html
 
   def index
+    @course = Course.find(params[:course_id])
     @ipas = Ipa.all
-    respond_with(@ipas)
+    respond_with(@course)
   end
 
   def show
@@ -13,14 +14,18 @@ class IpasController < ApplicationController
   end
 
   def new
+    @course = Course.find(params[:course_id])
     @ipa = Ipa.new
+    @path = [@course,@ipa]
     respond_with(@ipa)
   end
 
   def edit
+    @path = @ipa
   end
 
   def create
+    @course = Course.find(params[:course_id])
     @ipa = Ipa.new(ipa_params)
     @ipa.save
     respond_with(@ipa)

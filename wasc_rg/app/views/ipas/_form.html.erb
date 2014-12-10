@@ -1,4 +1,4 @@
-<%= form_for(@ipa) do |f| %>
+<%= form_for(@path) do |f| %>
   <% if @ipa.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ipa.errors.count, "error") %> prohibited this ipa from being saved:</h2>
@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :letter %><br>
-    <%= f.text_field :letter %>
+    <%= f.collection_select :letter, ['I', 'P', 'A'], :to_s, :to_s %>
   </div>
   <div class="field">
     <%= f.label :outcome_id %><br>
-    <%= f.text_field :outcome_id %>
+    <%= f.collection_select :outcome_id, Outcome.all, :id, :objective_letter %>
   </div>
   <div class="field">
     <%= f.label :course_id %><br>
-    <%= f.text_field :course_id %>
+    <%= f.collection_select :course_id, Course.all, :id, :course_num %>
   </div>
   <div class="actions">
     <%= f.submit %>

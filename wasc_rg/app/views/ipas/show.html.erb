@@ -7,13 +7,12 @@
 
 <p>
   <strong>Outcome:</strong>
-  <%= @ipa.outcome %>
+  <%= @ipa.outcome.objective_letter %>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @ipa.course %>
+  <%= @ipa.course.course_num %>
 </p>
 
 <%= link_to 'Edit', edit_ipa_path(@ipa) %> |
-<%= link_to 'Back', ipas_path %>
