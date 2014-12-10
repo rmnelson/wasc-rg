@@ -14,8 +14,8 @@
     <% @ipas.each do |ipa| %>
       <tr>
         <td><%= ipa.letter %></td>
-        <td><%= ipa.outcome %></td>
-        <td><%= ipa.course %></td>
+        <td><%= ipa.outcome.objective_letter %></td>
+        <td><%= ipa.course.course_num %></td>
         <td><%= link_to 'Show', ipa %></td>
         <td><%= link_to 'Edit', edit_ipa_path(ipa) %></td>
         <td><%= link_to 'Destroy', ipa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
