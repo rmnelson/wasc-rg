@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207132430) do
+ActiveRecord::Schema.define(version: 20141210170029) do
+
+  create_table "course_outcomes", force: true do |t|
+    t.integer  "course_work_id", precision: 38, scale: 0
+    t.integer  "outcome_id",     precision: 38, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "course_outcomes", ["course_work_id"], name: "i_cou_out_cou_wor_id"
+  add_index "course_outcomes", ["outcome_id"], name: "i_course_outcomes_outcome_id"
 
   create_table "course_works", force: true do |t|
     t.string   "name"

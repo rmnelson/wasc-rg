@@ -2,13 +2,12 @@
 
 <p>
   <strong>Course work:</strong>
-  <%= @course_outcome.course_work %>
+  <%= @course_outcome.course_work.name %>
 </p>
 
 <p>
   <strong>Outcome:</strong>
-  <%= @course_outcome.outcome %>
+  <%= @course_outcome.outcome.objective_letter %>
 </p>
 
 <%= link_to 'Edit', edit_course_outcome_path(@course_outcome) %> |
-<%= link_to 'Back', course_outcomes_path %>

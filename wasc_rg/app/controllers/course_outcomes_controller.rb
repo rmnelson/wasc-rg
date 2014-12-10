@@ -4,6 +4,7 @@ class CourseOutcomesController < ApplicationController
   respond_to :html
 
   def index
+    @course = Course.find(params[:course_id])
     @course_outcomes = CourseOutcome.all
     respond_with(@course_outcomes)
   end
@@ -13,11 +14,14 @@ class CourseOutcomesController < ApplicationController
   end
 
   def new
+    @course = Course.find(params[:course_id])
     @course_outcome = CourseOutcome.new
+    @path = [@course, @course_outcome]
     respond_with(@course_outcome)
   end
 
   def edit
+    @path = @course_outcome
   end
 
   def create

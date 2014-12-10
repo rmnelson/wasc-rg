@@ -5,6 +5,7 @@
     <tr>
       <th>Course work</th>
       <th>Outcome</th>
+      <th>Outcome Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,8 +13,9 @@
   <tbody>
     <% @course_outcomes.each do |course_outcome| %>
       <tr>
-        <td><%= course_outcome.course_work %></td>
-        <td><%= course_outcome.outcome %></td>
+        <td><%= course_outcome.course_work.name %></td>
+        <td><%= course_outcome.outcome.objective_letter %></td>
+	<td><%= course_outcome.outcome.description %></td>
         <td><%= link_to 'Show', course_outcome %></td>
         <td><%= link_to 'Edit', edit_course_outcome_path(course_outcome) %></td>
         <td><%= link_to 'Destroy', course_outcome, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Course outcome', new_course_outcome_path %>
+<%= link_to 'New Course outcome', new_course_course_outcome_path %>
