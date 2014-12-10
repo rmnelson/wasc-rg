@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :course_outcomes
-
   get 'start/index'
-
-
 
   resources :courses do
   	resources :course_works, :shallow => true

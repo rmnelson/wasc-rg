@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course work:</strong>
+  <%= @course_outcome.course_work %>
+</p>
+
+<p>
+  <strong>Outcome:</strong>
+  <%= @course_outcome.outcome %>
+</p>
+
+<%= link_to 'Edit', edit_course_outcome_path(@course_outcome) %> |
+<%= link_to 'Back', course_outcomes_path %>
