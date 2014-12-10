@@ -2,12 +2,12 @@
 
 <p>
   <strong>Corse work:</strong>
-  <%= @grade.corse_work %>
+  <%= CourseWork.find(@grade.course_work_id).name %>
 </p>
 
 <p>
   <strong>Student:</strong>
-  <%= @grade.student %>
+  <%= Student.find(@grade.student_id).full_name %>
 </p>
 
 <p>
@@ -16,4 +16,3 @@
 </p>
 
 <%= link_to 'Edit', edit_grade_path(@grade) %> |
-<%= link_to 'Back', grades_path %>

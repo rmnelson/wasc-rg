@@ -7,7 +7,6 @@
                         work = a.split("[")[0].strip
                         points = a.scan(/(?<=Pts: ).*(?=[]])/)[0]	
 			current_coursework = CourseWork.where(name: work, course_id: params[:course_id]).first
-			fuck
 			file[1..-1].each do |l| 
 				current_student = Student.where(student_id: l[3]).first
 				grade_value = l[i+6]

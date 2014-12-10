@@ -13,8 +13,8 @@
   <tbody>
     <% @grades.each do |grade| %>
       <tr>
-        <td><%= grade.corse_work %></td>
-        <td><%= grade.student %></td>
+        <td><%= CourseWork.find(grade.course_work_id).name %></td>
+        <td><%= Student.find(grade.student_id).full_name %></td>
         <td><%= grade.value %></td>
         <td><%= link_to 'Show', grade %></td>
         <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
