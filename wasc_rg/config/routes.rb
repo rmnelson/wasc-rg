@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :course_outcomes
+
   get 'start/index'
 
 

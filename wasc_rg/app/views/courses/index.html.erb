@@ -27,6 +27,7 @@
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Works', course_course_works_path(course) %></td>
         <td><%= link_to 'Grades', course_grades_path(course) %></td>
+        <td><%= link_to 'Outcomes', course_course_outcomes_path(course) %></td>
       </tr>
     <% end %>
   </tbody>

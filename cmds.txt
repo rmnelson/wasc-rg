@@ -49,8 +49,8 @@ rails g scaffold course course_num:string course_title:string units:integer prog
 rails g scaffold outcome objective_letter:string description:string program:references
 rails g scaffold ipa letter:string outcome:references course:references
 rails g scaffold student student_id:integer full_name:string last_name:string first_name:string username:string grade_basis:string academic_lev:string availability:string course:references program:references
-rails g scaffold course_work name:string course:references
-rails g scaffold grades corse_work:references student:references value:integer
+rails g scaffold course_work name:string max_points:string course:references
+rails g scaffold grades course_work:references student:references value:string
 rails g scaffold semester name:string
 rails g scaffold course_outcome course_work:references outcome:references
 rails g controller start index
