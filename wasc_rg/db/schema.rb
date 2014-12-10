@@ -39,14 +39,14 @@ ActiveRecord::Schema.define(version: 20141207132430) do
   add_index "courses", ["teacher_id"], name: "index_courses_on_teacher_id"
 
   create_table "grades", force: true do |t|
-    t.integer  "corse_work_id", precision: 38, scale: 0
-    t.integer  "student_id",    precision: 38, scale: 0
-    t.integer  "value",         precision: 38, scale: 0
+    t.integer  "course_work_id", precision: 38, scale: 0
+    t.integer  "student_id",     precision: 38, scale: 0
+    t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "grades", ["corse_work_id"], name: "index_grades_on_corse_work_id"
+  add_index "grades", ["course_work_id"], name: "index_grades_on_course_work_id"
   add_index "grades", ["student_id"], name: "index_grades_on_student_id"
 
   create_table "ipas", force: true do |t|

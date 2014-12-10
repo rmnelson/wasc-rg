@@ -1,0 +1,22 @@
+
+<%
+	if params[:commit] == "Upload" then
+		io = params[:file]
+		headers = CSV.read(io.tempfile)[0]
+		headers[6..-1].each do |a| 
+			work = a.split("[")[0].strip
+			points = a.scan(/(?<=Pts: ).*(?=[]])/)[0] 
+			CourseWork.create(name: work, max_points: points, course_id: params[:course_id]) %>
+			<%= "Created #{work}<br> ".html_safe %> 
+		<% end
+	end
+%>
+
+<p>
+  <strong>Load Course Works</strong>
+  <%= form_tag course_load_works_path, :multipart => true do %>
+  <%= file_field_tag :file, :accept => "text/csv" %>
+  <%= submit_tag "Upload" %>
+  <% end %>
+</p>
+

@@ -4,6 +4,7 @@ class GradesController < ApplicationController
   respond_to :html
 
   def index
+    @crouse = Course.find(params[:course_id])
     @grades = Grade.all
     respond_with(@grades)
   end
@@ -13,11 +14,14 @@ class GradesController < ApplicationController
   end
 
   def new
+    @course = Course.find(params[:course_id])
     @grade = Grade.new
+    @path = [@course,@grade]
     respond_with(@grade)
   end
 
   def edit
+    @path = @grade
   end
 
   def create
@@ -34,6 +38,9 @@ class GradesController < ApplicationController
   def destroy
     @grade.destroy
     respond_with(@grade)
+  end
+  
+  def load_grades
   end
 
   private

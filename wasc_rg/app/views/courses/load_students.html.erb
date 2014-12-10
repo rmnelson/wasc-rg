@@ -1,0 +1,16 @@
+<%
+	io = params[:file]
+	@csv_students = SmarterCSV.process(io.tempfile, :row_sep => :auto, :key_mapping => {:'program_-_plan_-_subplan' => :program}) %>
+	<% @csv_students.each_with_index do |s, i| 
+		if s[:program] == "Undergraduate - Computer Information Sys (BS)" then
+			s_program = "CINS"
+		else
+			s_program = "CSCI"
+		end
+		s_p_id = Program.where(:name => s_program).first  
+		@student = Student.new(:student_id => s[:id], :full_name => s[:name], :last_name => s[:name].split(",")[0], :first_name => s[:name].split(",")[1].split(" ")[0], :program_id => s_p_id.id)	
+		@student.save
+		%>	
+		<%= "Importing ".html_safe +  s[:name] + "<br>".html_safe %>
+	<% end %>
+<%= link_to 'Students', students_path %>

@@ -1,0 +1,28 @@
+<%
+        if params[:commit] == "Upload" then
+                io = params[:file]
+		file = CSV.read(io.tempfile)
+                headers = file[0]
+                headers[6..-1].each_with_index do |a, i|
+                        work = a.split("[")[0].strip
+                        points = a.scan(/(?<=Pts: ).*(?=[]])/)[0]	
+			current_coursework = CourseWork.where(name: work, course_id: params[:course_id]).first
+			fuck
+			file[1..-1].each do |l| 
+				current_student = Student.where(student_id: l[3]).first
+				grade_value = l[i+6]
+				Grade.create(course_work_id: current_coursework.id, student_id: current_student.id, value: grade_value)%>
+                        	<%= "Grade created for #{work} with #{l[i+6]} for #{l[3]}<br>".html_safe %>
+			<% end
+		end
+        end
+%>
+
+<p>
+  <strong>Load Course Grades</strong>
+  <%= form_tag course_load_grades_path, :multipart => true do %>
+  <%= file_field_tag :file, :accept => "text/csv" %>
+  <%= submit_tag "Upload" %>
+  <% end %>
+</p>
+
