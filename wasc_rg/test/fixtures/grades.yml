@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  corse_work_id: 
+  course_work_id: 
   student_id: 
   value: 1
 
 two:
-  corse_work_id: 
+  course_work_id: 
   student_id: 
   value: 1

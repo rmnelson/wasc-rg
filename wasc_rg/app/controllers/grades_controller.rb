@@ -49,6 +49,6 @@ class GradesController < ApplicationController
     end
 
     def grade_params
-      params.require(:grade).permit(:corse_work_id, :student_id, :value)
+      params.require(:grade).permit(:course_work_id, :student_id, :value)
     end
 end
