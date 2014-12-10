@@ -4,20 +4,25 @@ class CourseWorksController < ApplicationController
   respond_to :html
 
   def index
+    @course = Course.find(params[:course_id])
     @course_works = CourseWork.all
     respond_with(@course_works)
   end
 
   def show
-    respond_with(@course_work)
+    @course = Course.find(@course_work.course_id)
+    respond_with(@course_work,@course)
   end
 
   def new
+    @course = Course.find(params[:course_id])
     @course_work = CourseWork.new
+    @path = [@course, @course_work]
     respond_with(@course_work)
   end
 
   def edit
+    @path = @course_work
   end
 
   def create
@@ -34,6 +39,9 @@ class CourseWorksController < ApplicationController
   def destroy
     @course_work.destroy
     respond_with(@course_work)
+  end
+
+  def load_works
   end
 
   private

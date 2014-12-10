@@ -29,7 +29,7 @@
         <td><%= student.academic_lev %></td>
         <td><%= student.availability %></td>
         <td><%= student.course %></td>
-        <td><%= student.program %></td>
+        <td><%= student.program.name %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -40,4 +40,7 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<!-- This code is not being displayed on page because students should be loaded
+     via the course view and using the roaster created from PeopleSoft -->
+
+		<% link_to 'New Student', new_student_path %>

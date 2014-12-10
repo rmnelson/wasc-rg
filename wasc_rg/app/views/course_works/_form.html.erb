@@ -1,4 +1,4 @@
-<%= form_for(@course_work) do |f| %>
+<%= form_for(@path) do |f| %>
   <% if @course_work.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@course_work.errors.count, "error") %> prohibited this course_work from being saved:</h2>
@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :course_id %><br>
-    <%= f.text_field :course_id %>
+    <%= f.collection_select :course_id, Course.all, :id, :course_number_title %>
   </div>
   <div class="actions">
     <%= f.submit %>

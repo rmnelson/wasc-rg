@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20141207132430) do
 
   create_table "course_works", force: true do |t|
     t.string   "name"
+    t.string   "max_points"
     t.integer  "course_id",  precision: 38, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"

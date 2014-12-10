@@ -13,7 +13,7 @@
     <% @course_works.each do |course_work| %>
       <tr>
         <td><%= course_work.name %></td>
-        <td><%= course_work.course %></td>
+        <td><%= course_work.course.course_title %></td>
         <td><%= link_to 'Show', course_work %></td>
         <td><%= link_to 'Edit', edit_course_work_path(course_work) %></td>
         <td><%= link_to 'Destroy', course_work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Course work', new_course_work_path %>
+<%= link_to 'New Course work', new_course_course_work_path %>
+<%= link_to 'Upload learn export', course_course_work_upload_path %>

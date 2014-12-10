@@ -1,6 +1,33 @@
 Course.create!([
   {course_num: "CINS570", course_title: "Advanced Databases", units: 3, program_id: 10000, teacher_id: 10000, semester_id: 10000 }
 ])
+CourseWork.create!([
+  {name: "Current Grade", max_points: "up to 670", course_id: 10000 },
+  {name: "Midterm 1", max_points: "100", course_id: 10000 },
+  {name: "Midterm 2", max_points: "100", course_id: 10000 },
+  {name: "Final", max_points: "100", course_id: 10000 },
+  {name: "Labs Total", max_points: "up to 2,000", course_id: 10000 },
+  {name: "Lab 1", max_points: "100", course_id: 10000 },
+  {name: "Lab 2", max_points: "100", course_id: 10000 },
+  {name: "Lab 3", max_points: "100", course_id: 10000 },
+  {name: "Lab 4", max_points: "100", course_id: 10000 },
+  {name: "Lab 5", max_points: "100", course_id: 10000 },
+  {name: "Lab 6", max_points: "100", course_id: 10000 },
+  {name: "Lab 7", max_points: "100", course_id: 10000 },
+  {name: "Lab 8", max_points: "100", course_id: 10000 },
+  {name: "Lab 9", max_points: "100", course_id: 10000 },
+  {name: "Lab 10", max_points: "100", course_id: 10000 },
+  {name: "Lab 11", max_points: "100", course_id: 10000 },
+  {name: "Lab 2-1", max_points: "100", course_id: 10000 },
+  {name: "PL/SQL Lab 1", max_points: "100", course_id: 10000 },
+  {name: "PL/SQL Lab 2", max_points: "100", course_id: 10000 },
+  {name: "PL/SQL Lab 3", max_points: "100", course_id: 10000 },
+  {name: "PL/SQL Lab 4", max_points: "100", course_id: 10000 },
+  {name: "PL/SQL Lab 5", max_points: "100", course_id: 10000 },
+  {name: "PL/SQL Lab 6", max_points: "100", course_id: 10000 },
+  {name: "PL/SQL Lab 7", max_points: "100", course_id: 10000 },
+  {name: "Project Name", max_points: "100", course_id: 10000 }
+])
 Outcome.create!([
   {objective_letter: "A", description: "An ability to apply knowledge of computing and mathematics appropriate to information systems.", program_id: 10000 },
   {objective_letter: "B", description: "An ability to analyze a business problem, and identify and define the computing requirements appropriate to its solution.", program_id: 10000 },

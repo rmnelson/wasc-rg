@@ -15,7 +15,7 @@
       <tr>
         <td><%= outcome.objective_letter %></td>
         <td><%= outcome.description %></td>
-        <td><%= outcome.program %></td>
+        <td><%= outcome.program.name %></td>
         <td><%= link_to 'Show', outcome %></td>
         <td><%= link_to 'Edit', edit_outcome_path(outcome) %></td>
         <td><%= link_to 'Destroy', outcome, method: :delete, data: { confirm: 'Are you sure?' } %></td>

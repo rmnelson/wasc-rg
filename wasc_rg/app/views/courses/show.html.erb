@@ -32,7 +32,7 @@
 
 <p>
   <strong>Load students</strong>
-  <%= form_tag load_students_path, :multipart => true do %>
+  <%= form_tag course_load_students_path(course_id: @course.id), :multipart => true do %>
   <%= file_field_tag :file, :accept => "text/csv" %>
   <%= submit_tag "Upload" %>
 </p>

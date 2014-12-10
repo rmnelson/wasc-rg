@@ -37,6 +37,7 @@ class CoursesController < ApplicationController
   end
 
   def load_students
+   @course_id = params[:id]
   end
 
   private
