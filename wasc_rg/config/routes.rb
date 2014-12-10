@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :courses do
   	resources :course_works, :shallow => true
   	resources :grades, :shallow => true
+	resources :course_outcomes, :shallow => true
   	post "load_students" => 'courses#load_students', as: 'load_students'
 	get "load_works" => 'course_works#load_works', as: 'course_work_upload'
 	post "load_works" => 'course_works#load_works'
